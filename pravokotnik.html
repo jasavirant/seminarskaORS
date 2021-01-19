@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <style>
+        button {
+            margin: 5px;
+        }
+
+        .izris {
+            height: 700px;
+            width: 700px;
+            border: black 1px solid
+        }
+
+        .izris svg {
+            height: 625px;
+            width: 625px;
+            margin: 25px
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 1000px;">
+        <form id="obrazec">
+            Stranica a: <input type="number" name="" id="a"><br>
+
+            Stranica b:<input type="number" name="" id="b"> <br>
+
+            <button type="button" onclick="pravokotnik_podatki()">Izračunaj</button>
+            <button type="button" onclick="izris_pravokotnika()">Izriši</button>
+        </form>
+
+        <p id="obseg_txt">Pločina</p> <br>
+        <p id="ploscina_txt">Oeg</p>
+
+        <div class="izris">
+            <svg>
+                <rect id="pravokotnik"
+                    style="width:100;height:100; stroke:black ;stroke-width:2 ;fill:white;display:none;padding:5px" />
+            </svg>
+        </div>
+
+    </div>
+    <div>
+        <script>
+            function pravokotnik_podatki() {
+                var text = "";
+                var a = document.getElementById("a").value;
+                var b = document.getElementById("b").value;
+                var obseg = (2 * a + 2 * b);
+                text += obseg;
+                document.getElementById("obseg_txt").innerHTML = text;
+
+                var text = "";
+                var ploscina = (a * b);
+                text += ploscina;
+                document.getElementById("ploscina_txt").innerHTML = text;
+            }
+
+
+            function izris_pravokotnika() {
+                var a = document.getElementById("a").value;
+                var b = document.getElementById("b").value;
+
+
+
+
+                var sirina_2 = a * 25;
+
+                var visina_2 = b * 25;
+                document.getElementById("pravokotnik").style.height = visina_2;
+                document.getElementById("pravokotnik").style.width = sirina_2;
+                document.getElementById("pravokotnik").style.display = "inline";
+
+
+
+
+            }
+        </script>
+    </div>
+</body>
+
+</html>
